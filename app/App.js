@@ -4,7 +4,12 @@ import ReactDOM from 'react-dom';
 class App extends React.Component {
 	render() {
 		return (
-			<h1>Hello World!</h1>
+			<div className="container">
+				<div className="row">
+					<h1>Hello, World!</h1>
+					<h3>This thing!</h3>
+				</div>
+			</div>
 		)
 	}
 }
