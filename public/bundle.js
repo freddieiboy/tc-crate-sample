@@ -60,6 +60,10 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
+	var _Crate = __webpack_require__(159);
+
+	var _Crate2 = _interopRequireDefault(_Crate);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -87,14 +91,9 @@
 						'div',
 						{ className: 'row' },
 						_react2.default.createElement(
-							'h1',
-							null,
-							'Hello, World!'
-						),
-						_react2.default.createElement(
-							'h3',
-							null,
-							'This thing!'
+							'div',
+							{ className: 'canvas', style: canvasStyle },
+							_react2.default.createElement(_Crate2.default, null)
 						)
 					)
 				);
@@ -103,6 +102,12 @@
 
 		return App;
 	}(_react2.default.Component);
+
+	var canvasStyle = {
+		height: '100vh',
+		width: '100%',
+		backgroundColor: '#48535E'
+	};
 
 	exports.default = App;
 
@@ -19702,6 +19707,78 @@
 
 	module.exports = __webpack_require__(3);
 
+
+/***/ },
+/* 159 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Crate = function (_React$Component) {
+		_inherits(Crate, _React$Component);
+
+		function Crate() {
+			_classCallCheck(this, Crate);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(Crate).apply(this, arguments));
+		}
+
+		_createClass(Crate, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					{ className: "crate-holder" },
+					_react2.default.createElement("div", { className: "crate-top" }),
+					_react2.default.createElement("div", { className: "crate-bottom" })
+				);
+			}
+		}]);
+
+		return Crate;
+	}(_react2.default.Component);
+
+	// Crate.styles = {
+	// 	crateHolder: {
+	// 		height: '160',
+	// 		width: '200',
+	// 		position: 'absolute',
+	// 		top: '50%',
+	// 		left: '50%',
+	// 		marginTop: '-75',
+	// 		marginLeft: '-100'
+	// 	},
+	// 	crateTop: {
+
+	// 	},
+	// 	crateBottom: {
+	// 		height: '100%',
+	// 		width: '100%',
+	// 		backgroundColor: '#0AB3A2',
+	// 		borderRadius: '35',
+	// 		boxShadow: '0px 17px 12px 0px rgba(0,0,0,0.50)'
+	// 	}
+	// }
+
+	exports.default = Crate;
 
 /***/ }
 /******/ ]);
