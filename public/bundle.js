@@ -86,6 +86,37 @@
 		}
 
 		_createClass(App, [{
+			key: 'crateAction',
+			value: function crateAction() {
+				return console.log('Crate was clicked!');
+			}
+		}, {
+			key: 'canvasAction',
+			value: function canvasAction() {
+				return console.log('Canvas was clicked!');
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var _this2 = this;
+
+				return _react2.default.createElement(
+					'div',
+					{ className: 'container' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'row' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'canvas', style: this.styles().canvas },
+							_react2.default.createElement(_Crate2.default, { crateAction: function crateAction() {
+									return _this2.crateAction();
+								} })
+						)
+					)
+				);
+			}
+		}, {
 			key: 'classes',
 			value: function classes() {
 				return {
@@ -97,23 +128,6 @@
 						}
 					}
 				};
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'div',
-					{ className: 'container' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'row' },
-						_react2.default.createElement(
-							'div',
-							{ style: this.styles().canvas },
-							_react2.default.createElement(_Crate2.default, null)
-						)
-					)
-				);
 			}
 		}]);
 
@@ -32354,6 +32368,22 @@
 		}
 
 		_createClass(Crate, [{
+			key: 'render',
+			value: function render() {
+				var _this2 = this;
+
+				//TODO: if className be left alone but 'IS' == className? Research after.
+				return _react2.default.createElement(
+					'div',
+					{ className: 'crateHolder', style: this.styles().crateHolder, onClick: function onClick() {
+							return _this2.props.crateAction();
+						} },
+					_react2.default.createElement('div', { className: 'crateTop', style: this.styles().crateTop }),
+					_react2.default.createElement('div', { className: 'crateBottom', style: this.styles().crateBottom }),
+					_react2.default.createElement('div', { className: 'crateShadow', style: this.styles().crateShadow })
+				);
+			}
+		}, {
 			key: 'classes',
 			value: function classes() {
 				return {
@@ -32367,26 +32397,31 @@
 							marginTop: '-75',
 							marginLeft: '-100'
 						},
-						crateTop: {},
+						crateTop: {
+							height: ' 87%',
+							width: '100%',
+							backgroundColor: '#61F9CE',
+							borderRadius: '35',
+							zIndex: '1',
+							top: '-36%',
+							position: 'absolute'
+						},
 						crateBottom: {
 							height: '100%',
 							width: '100%',
 							backgroundColor: '#0AB3A2',
 							borderRadius: '35',
-							boxShadow: '0px 17px 12px 0px rgba(0,0,0,0.50)'
+							position: 'absolute'
+						},
+						crateShadow: {
+							height: '100%',
+							width: '100%',
+							borderRadius: '35',
+							boxShadow: '0px 17px 12px 0px rgba(0,0,0,0.50)',
+							position: 'absolute'
 						}
 					}
 				};
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'div',
-					{ style: this.styles().crateHolder },
-					_react2.default.createElement('div', { style: this.styles().crateTop }),
-					_react2.default.createElement('div', { style: this.styles().crateBottom })
-				);
 			}
 		}]);
 
