@@ -4,6 +4,7 @@ import ReactCSS from 'reactcss';
 import Crate from './components/Crate';
 
 class App extends ReactCSS.Component {
+
 	render() {
 		return (
 			<div className="container">
@@ -21,7 +22,7 @@ class App extends ReactCSS.Component {
 				canvas: {
 					height: '100vh',
 					width: '100%',
-					backgroundColor: '#48535E'
+					backgroundColor: '#46535E'
 				}
 			}
 		}

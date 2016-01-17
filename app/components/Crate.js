@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactCSS from 'reactcss';
-import * as Anim from './URI/crateURI';
+import * as box from './crateInfo';
+// import Styles from '../stylesheets/global.scss';
 
 class Crate extends ReactCSS.Component {
 	constructor(props) {
     super(props);
     this.state = { 
     	pressed: false, 
-			test: console.log('init state')
+			test: console.log('init state'),
+			crate: box.randomBox()
     };
   }
   styles() {
@@ -53,7 +55,7 @@ class Crate extends ReactCSS.Component {
 				crateTop: {
 					height: ' 87%',
 					width: '100%',
-					backgroundColor: '#61F9CE',
+					backgroundColor: this.state.crate.lightColor,
 					borderRadius: '35',
 					zIndex: '2',
 					top: '-36%',
@@ -62,7 +64,7 @@ class Crate extends ReactCSS.Component {
 				crateBottom: {
 					height: '100%',
 					width: '100%',
-					backgroundColor: '#0AB3A2',
+					backgroundColor: this.state.crate.darkColor,
 					borderRadius: '35',
 					zIndex: '1',
 					position: 'absolute'
@@ -80,14 +82,14 @@ class Crate extends ReactCSS.Component {
 					width: '103%',
 					top: '0',
 					left: '-4px',
-					background: 'url(' + Anim.greenCrate.topPressed + ') no-repeat',
+					background: 'url(' + this.state.crate.topPressedEl + ') no-repeat',
 					backgroundColor: 'none'
 				},
 				crateBottom: {
 					width: '110%',
 					top: '4%',
 					left: '-4.5%',
-					background: 'url(' + Anim.greenCrate.bottomPressed + ') no-repeat',
+					background: 'url(' + this.state.crate.bottomPressedEl + ') no-repeat',
 					backgroundColor: 'none'
 				},
 				crateShadow: {
