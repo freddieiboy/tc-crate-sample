@@ -4,18 +4,12 @@ import ReactCSS from 'reactcss';
 import Crate from './components/Crate';
 
 class App extends ReactCSS.Component {
-	crateAction() {
-		return console.log('Crate was clicked!');
-	}
-	canvasAction() {
-		return console.log('Canvas was clicked!');
-	}
 	render() {
 		return (
 			<div className="container">
 				<div className="row">
 					<div className="canvas" is="canvas">
-						<Crate crateAction={() => this.crateAction()}/>
+						<Crate />
 					</div> 
 				</div>
 			</div>

@@ -13,7 +13,9 @@
     "bootstrap": "3.3.6",
     "react": "0.14.6",
     "react-dom": "0.14.6",
-    "reactcss": "0.4.2"
+    "react-redux": "4.0.6",
+    "reactcss": "0.4.2",
+    "redux": "3.0.5"
   },
   "devDependencies": {
     "babel-core": "6.4.0",
@@ -24,6 +26,7 @@
     "mocha": "2.3.4",
     "react-addons-test-utils": "0.14.6",
     "react-map-styles": "0.3.0",
+    "redux-devtools": "3.0.1",
     "webpack": "1.12.10",
     "webpack-dev-server": "1.14.0"
   }
