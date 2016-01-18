@@ -22,7 +22,7 @@
     "reactcss": "0.4.2",
     "redux": "3.0.5",
     "express": "4.13.3",
-    "react-map-styles": "0.3.0"
+    "react-map-styles": "0.3.0",
     "webpack": "1.12.10",
     "webpack-dev-middleware": "1.4.0",
     "webpack-hot-middleware": "2.6.0"
@@ -48,6 +48,6 @@
     "rimraf": "2.5.0",
     "sass-loader": "3.1.2",
     "stats-webpack-plugin": "0.3.0",
-    "style-loader": "0.13.0",
+    "style-loader": "0.13.0"
   }
 }
