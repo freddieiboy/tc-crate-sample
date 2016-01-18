@@ -1,7 +1,8 @@
-'use strict';
-
 var path = require('path');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+// var StatsPlugin = require('stats-webpack-plugin');
 
 module.exports = {
 	devtool: 'source-map',
@@ -26,10 +27,10 @@ module.exports = {
         screw_ie8: true
       }
     }),
-    new StatsPlugin('webpack.stats.json', {
-      source: false,
-      modules: false
-    }),
+    // new StatsPlugin('webpack.stats.json', {
+    //   source: false,
+    //   modules: false
+    // }),
     new webpack.DefinePlugin({
       'process.env': {
       	'NODE_ENV': JSON.stringify('production')
