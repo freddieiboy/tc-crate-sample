@@ -34,7 +34,7 @@ class Crate extends ReactCSS.Component {
 		//TODO: bug when you mouse up the top crate. state stops
 		//comment omg ggsdsdfsd
 		return (
-			<div className="crateHolder" is="crateHolder" onTouchStart={() => this.crateDownAction()} onTouchEnd={() => this.crateUpAction()}>
+			<div className="crateHolder" is="crateHolder" onMouseDown={() => this.crateDownAction()} onTouchStart={() => this.crateDownAction()} onTouchEnd={() => this.crateUpAction()} onMouseUp={() => this.crateUpAction()}>
 				<div className="crateTop" is="crateTop"></div>
 				<div className="crateBottom" is="crateBottom"></div>
 				<div className="crateShadow" is="crateShadow"></div>
