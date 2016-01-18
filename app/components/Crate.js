@@ -32,7 +32,7 @@ class Crate extends ReactCSS.Component {
 	render() {
 		//TODO: if className be left alone but 'IS' == className? Research after.
 		//TODO: bug when you mouse up the top crate. state stops
-		//comment thisand this this too
+		//comment omg ggsdsdfsd
 		return (
 			<div className="crateHolder" is="crateHolder" onMouseDown={() => this.crateDownAction()} onMouseUp={() => this.crateUpAction()}>
 				<div className="crateTop" is="crateTop"></div>

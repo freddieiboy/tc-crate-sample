@@ -18,12 +18,12 @@ module.exports = {
 		publicPath: '/'
 	},
 	 plugins: [
+		new webpack.HotModuleReplacementPlugin(),	
 	  new HtmlWebpackPlugin({
       template: 'app/index.tpl.html',
       inject: 'body',
       filename: 'index.html'
     }),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
 	module: {
