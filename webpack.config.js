@@ -13,7 +13,7 @@ module.exports = {
 		path.join(__dirname, 'app/App.js')
 	],
 	output: {
-		path: path.join(__dirname, '/public'),
+		path: path.join(__dirname, '/dist'),
 		filename: '[name].js',
 		publicPath: '/'
 	},
@@ -24,6 +24,7 @@ module.exports = {
       filename: 'index.html'
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
   ],
 	module: {
 		loaders: [
