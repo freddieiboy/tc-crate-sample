@@ -20,13 +20,11 @@ class Crate extends ReactCSS.Component {
 	crateDownAction() {
 			this.setState({ 
 				pressed: true,
-				test: console.log('down')
 			});
 	}
 	crateUpAction() {
 		this.setState({ 
 			pressed: false,
-			test: console.log('up')
 		});
 	}
 	render() {
