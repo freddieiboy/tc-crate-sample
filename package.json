@@ -36,6 +36,8 @@
     "cross-env": "1.0.7",
     "react-map-styles": "0.3.0",
     "webpack": "1.12.10",
+   "webpack-dev-middleware": "1.4.0",
+    "webpack-hot-middleware": "2.6.0",
     "extract-text-webpack-plugin": "1.0.1"
   },
   "devDependencies": {
@@ -49,7 +51,5 @@
     "sass-loader": "3.1.2",
     "stats-webpack-plugin": "0.3.0",
     "style-loader": "0.13.0",
-    "webpack-dev-middleware": "1.4.0",
-    "webpack-hot-middleware": "2.6.0"
   }
 }
