@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactCSS from 'reactcss';
 import Crate from './components/Crate';
-import Styles from './stylesheets/global.scss';
 
 class App extends ReactCSS.Component {
 
