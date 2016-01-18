@@ -1,2 +1,7 @@
 // DO I even need this file?
 $greenHighlight: #61F9CE;
+body {
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	background-color: red;
+}
