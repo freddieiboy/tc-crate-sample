@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack -w",
+    "start": "node main.js",
     "test": "mocha './app/**/*.spec.js' --compilers js:babel-core/register"
   },
   "author": "Freddie Iboy <freddieiboy@gmail.com> (http://www.simplycolor.in/)",
@@ -12,6 +12,7 @@
   "dependencies": {
     "bootstrap": "3.3.6",
     "node-sass": "3.4.2",
+    "path": "0.12.7",
     "react": "0.14.6",
     "react-dom": "0.14.6",
     "react-redux": "4.0.6",
@@ -25,13 +26,18 @@
     "babel-preset-react": "6.3.13",
     "css-loader": "0.23.1",
     "expect": "1.13.4",
+    "html-webpack-plugin": "1.7.0",
     "mocha": "2.3.4",
     "react-addons-test-utils": "0.14.6",
     "react-map-styles": "0.3.0",
+    "react-tools": "0.13.3",
+    "react-transform": "0.0.3",
     "redux-devtools": "3.0.1",
     "sass-loader": "3.1.2",
     "style-loader": "0.13.0",
     "webpack": "1.12.10",
-    "webpack-dev-server": "1.14.0"
+    "webpack-dev-middleware": "1.4.0",
+    "webpack-dev-server": "1.14.0",
+    "webpack-hot-middleware": "2.6.0"
   }
 }
