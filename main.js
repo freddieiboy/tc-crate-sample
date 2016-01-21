@@ -1,8 +1,6 @@
 var path = require('path');
 var express = require('express');
 var webpack = require('webpack');
-var webpackMiddleWare = require('webpack-dev-middleware');
-var webpackHotMiddleware = require('webpack-hot-middleware');
 var config = require('./webpack.config.dev.js');
 
 var isDeveloping = process.env.NODE_ENV !== 'production';
@@ -11,14 +9,12 @@ var app = express();
 
 if (isDeveloping) {
 	var compiler = webpack(config);
-	var middleware = webpackMiddleWare(compiler, {
+	app.use(require('webpack-dev-middleware')(compiler, {
 		noInfo: true,
 		publicPath: config.output.publicPath
-	});
+	}));
 
-	app.use(middleware);
-
-	app.use(webpackHotMiddleware(compiler));
+	app.use(require('webpack-hot-middleware')(compiler));
 
 	app.get('*', function response(req, res) {
 		res.sendFile(path.join(__dirname, 'app/index.html'));
