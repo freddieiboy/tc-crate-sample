@@ -8,7 +8,6 @@ class Crate extends ReactCSS.Component {
     super(props);
     this.state = { 
     	pressed: false, 
-			test: console.log('init state'),
 			crate: box.randomBox()
     };
   }
@@ -17,22 +16,23 @@ class Crate extends ReactCSS.Component {
   		'pressed': this.state.pressed
   	})
   }
-	crateDownAction() {
-			this.setState({ 
-				pressed: true,
-			});
-	}
-	crateUpAction() {
-		this.setState({ 
-			pressed: false,
-		});
-	}
+	// crateDownAction() {
+	// 		this.setState({ 
+	// 			pressed: true,
+	// 		});
+	// }
+	// crateUpAction() {
+	// 	this.setState({ 
+	// 		pressed: false,
+	// 	});
+	// }
 	render() {
 		//TODO: if className be left alone but 'IS' == className? Research after.
 		//TODO: bug when you mouse up the top crate. state stops
 		//comment omg ggsdsdfsd
 		return (
-			<div className="crateHolder" is="crateHolder" onMouseDown={() => this.crateDownAction()} onTouchStart={() => this.crateDownAction()} onTouchEnd={() => this.crateUpAction()} onMouseUp={() => this.crateUpAction()}>
+			// <div className="crateHolder" is="crateHolder" onMouseDown={() => this.crateDownAction()} onTouchStart={() => this.crateDownAction()} onTouchEnd={() => this.crateUpAction()} onMouseUp={() => this.crateUpAction()}>
+			<div className="crateHolder" is="crateHolder" onClick={() => console.log('Clicking on')}>
 				<div className="crateTop" is="crateTop"></div>
 				<div className="crateBottom" is="crateBottom"></div>
 				<div className="crateShadow" is="crateShadow"></div>

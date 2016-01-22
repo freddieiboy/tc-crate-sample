@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactCSS from 'reactcss';
 import Crate from './components/Crate';
+import Reducer from './state/reducers';
 
 class App extends ReactCSS.Component {
 
