@@ -42,25 +42,11 @@ const purple = {
 
 //TODO: make URI different colors instead of exporting them every time on Sketch.
 
-const randomBox = () => {
-	const crateColors = [
-		green,
-		yellow, 
-		orange,
-		blue,
-		pink,
-		purple
-	];
-	return crateColors[Math.floor(Math.random() * 6)];
-}
-
-
 export {
 	green,
 	yellow,
 	orange,
 	blue,
 	pink,
-	purple,
-	randomBox
+	purple
 }

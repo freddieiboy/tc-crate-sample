@@ -1,28 +1,37 @@
 import { createStore } from 'redux';
 
-const initialSate = {
-	// crateState: [0],
-	id: 0,
-	pressed: false
+const initialState = {
+	crate: [1],
+	crateById: {
+		1: {
+			id: 1,
+			pressed: false,
+			opened: false
+		}
+	}
 }
 
-// var action = {
-// 	CRATE_POP: 'CRATE_POP'
-// }
-
-const crateState = (state = initialSate, action) => {
+const crateState = (state = initialState, action) => {
 	switch (action.type) {
-		// case CRATE_PRESS:
-		// 	return state.crateState.slice...
-		case 'CRATE_POP':
-			return state.pressed = true;
+		case 'PRESS_CRATE':
+			const newId = state.crate[state.crate.length-1] + 1;
+			return Object.assign({}, state, {
+				crate: state.crate.concat(newId),
+				crateById: {
+					...state.crateById,
+					[newId]: {
+						id: newId,
+						pressed: true,
+						opened: false
+					}
+				}
+			})
 		default:
 			return state;
 	}
 }
 
-const store = createStore(crateState);
-console.log(store.getState());
-store.dispatch({ type: 'CRATE_POP' });
-console.log(store.getState());
-store.subscribe(crateState)
+export {
+	initialState,
+	crateState
+}

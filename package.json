@@ -24,6 +24,8 @@
     "babel-preset-react-hmre": "1.0.1",
     "bootstrap": "3.3.6",
     "cross-env": "1.0.7",
+    "deep-freeze": "0.0.1",
+    "expect": "1.13.4",
     "express": "4.13.3",
     "extract-text-webpack-plugin": "1.0.1",
     "html-webpack-plugin": "1.7.0",
@@ -34,12 +36,14 @@
     "react-dom": "0.14.6",
     "react-map-styles": "0.3.0",
     "react-redux": "4.0.6",
+    "react-tools": "0.13.3",
     "reactcss": "0.4.2",
     "redux": "3.0.5",
     "rimraf": "2.5.0",
     "webpack": "1.12.10"
   },
   "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "6.3.13",
     "css-loader": "0.23.1",
     "expect": "1.13.4",
     "mocha": "2.3.4",
@@ -47,10 +51,12 @@
     "react-tools": "0.13.3",
     "react-transform": "0.0.3",
     "redux-devtools": "3.0.1",
+    "redux-devtools-dock-monitor": "1.0.1",
+    "redux-devtools-log-monitor": "1.0.2",
     "sass-loader": "3.1.2",
-    "webpack-dev-middleware": "1.4.0",
-    "webpack-hot-middleware": "2.6.0",
     "stats-webpack-plugin": "0.3.0",
-    "style-loader": "0.13.0"
+    "style-loader": "0.13.0",
+    "webpack-dev-middleware": "1.4.0",
+    "webpack-hot-middleware": "2.6.0"
   }
 }

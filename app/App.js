@@ -1,17 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component, PropTypes } from 'react';
 import ReactCSS from 'reactcss';
 import Crate from './components/Crate';
-import Reducer from './state/reducers';
+import { crateState } from './state/reducers';
+import { Provider, connect } from 'react-redux';
+
 
 class App extends ReactCSS.Component {
-
+	componentDidMount() {
+		const { store } = this.context;
+		this.unsubscribe = store.subscribe(() =>
+			this.forceUpdate()
+		);
+	}
+	componentWillUnmount() {
+		this.unsubscribe();
+	}
 	render() {
+		const props = this.props;
+		const { store } = this.context;
+		const state = store.getState();
+
 		return (
 			<div className="container">
 				<div className="row">
 					<div className="canvas" is="canvas">
-						<Crate />
+						<Crate crateState={crateState} />
 					</div> 
 				</div>
 			</div>
@@ -30,9 +43,15 @@ class App extends ReactCSS.Component {
 	}
 }
 
-export default App;
+function mapStateToProps(state) {
+	return {
+		crateState: state.crateState
+	}
+}
 
-ReactDOM.render(
-	<App />,
-	document.getElementById('app')
-);
+App.contextTypes = {
+	store: React.PropTypes.object
+}
+
+export default connect(mapStateToProps)(App);
+
