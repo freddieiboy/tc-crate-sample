@@ -1,7 +1,58 @@
 // DO I even need this file?
 $greenHighlight: #61F9CE;
-body {
-	-webkit-user-select: none;
-	-webkit-touch-callout: none;
-	background-color: red;
+$greenDarkColor: #0AB3A2;
+
+.crateHolder {
+	height: 160px;
+	width: 200px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -75px;
+	margin-left: -100px;
+}
+
+.crateTop {
+	height:  87%;
+	width: 100%;
+	background-color: $greenHighlight;
+	border-radius: 35px;
+	z-index: 2;
+	top: -36%;
+	position: absolute;
+}
+
+.crateBottom {
+	height: 100%;
+	width: 100%;
+	background-color: $greenDarkColor;
+	border-radius: 35px;
+	z-index: 1;
+	position: absolute;
+}
+
+.crateShadow {
+	height: 100%;
+	width: 100%;
+	border-radius: 35px;
+	box-shadow: 0px 17px 12px 0px rgba(0,0,0,0.50);
+	position: absolute;
+}
+
+.crateTopPressed {
+	width: 103%;
+	top: 0;
+	left: -4%;
+	// background: url(' + box.green.topPressedEl + ') no-repeat;
+	background-color: none;
+},
+.crateBottomPressed {
+	width: 110%;
+	top: 4%;
+	left: -4.5%;
+	// background: url(' + box.green.bottomPressedEl + ') no-repeat;
+	background-color: none;
+},
+.crateShadowPressed {
+	top: -2%;
 }
