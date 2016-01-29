@@ -20,7 +20,7 @@ class Crate extends React.Component {
 		const { store } = this.context;
 		const state = store.getState();
 
-		console.log(state);
+		// console.log(state);
 
 		//TODO: if className be left alone but 'IS' == className? Research after.
 		//TODO: bug when you mouse up the top crate. state stops

@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import ReactCSS from 'reactcss';
 import Crate from './components/Crate';
 import { crateState } from './state/reducers';
+import { newTitle } from './state/CrateActions';
 import { Provider, connect } from 'react-redux';
 
 
@@ -25,6 +26,7 @@ class App extends ReactCSS.Component {
 				<div className="row">
 					<div className="canvas" is="canvas">
 						<Crate crateState={crateState} />
+						<h4 className="title" onClick={() => store.dispatch(newTitle())}>{state.title}</h4>
 					</div> 
 				</div>
 			</div>
