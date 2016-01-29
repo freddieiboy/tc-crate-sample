@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import ReactCSS from 'reactcss';
 import * as box from './crateInfo';
 import { crateState } from '../state/reducers';
-import { pressCrate } from '../state/CrateActions';
+import { pressCrate, defaultCrate } from '../state/CrateActions';
 import css from '../stylesheets/global.scss';
 
 class Crate extends React.Component {
@@ -30,7 +30,7 @@ class Crate extends React.Component {
 			<div className="crateComponent">
 				<div className="crateHolder">
 					<div className="crateTop" onClick={() => store.dispatch(pressCrate())}></div>
-					<div className="crateBottom"></div>
+					<div className="crateBottom" onClick={() => store.dispatch(defaultCrate())}></div>
 					<div className="crateShadow"></div>
 				</div>
 			</div>
