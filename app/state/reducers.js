@@ -5,7 +5,7 @@ import expect from 'expect';
 const initialState = {
 	pressed: false,
 	opened: false,
-	title: 'Not Pressed'
+	title: 'Default Title'
 }
 
 // const initialState = {
@@ -29,6 +29,7 @@ const crateState = (state = initialState, action) => {
 		case 'DEFAULT_CRATE':
 			return Object.assign({}, state, {
 				pressed: false,
+				title: 'It is NOT pressed!'
 			})
 		case 'NEW_TITLE':
 			return Object.assign({}, state, {

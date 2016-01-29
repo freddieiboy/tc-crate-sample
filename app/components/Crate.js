@@ -4,6 +4,7 @@ import * as box from './crateInfo';
 import { crateState } from '../state/reducers';
 import { pressCrate, defaultCrate } from '../state/CrateActions';
 import css from '../stylesheets/global.scss';
+import classNames from 'classnames';
 
 class Crate extends React.Component {
 	componentDidMount() {
@@ -25,12 +26,22 @@ class Crate extends React.Component {
 		//TODO: if className be left alone but 'IS' == className? Research after.
 		//TODO: bug when you mouse up the top crate. state stops
 
+		const crateTop = classNames({
+			'crateTop': !state.pressed,
+			'crateTopPressed': state.pressed
+		});
+
+		const crateBottom = classNames({
+			'crateBottom': !state.pressed,
+			'crateBottomPressed': state.pressed
+		});
+
 		return (
 			// <div className="crateHolder" is="crateHolder" onMouseDown={() => this.crateDownAction()} onTouchStart={() => this.crateDownAction()} onTouchEnd={() => this.crateUpAction()} onMouseUp={() => this.crateUpAction()}>
 			<div className="crateComponent">
 				<div className="crateHolder">
-					<div className="crateTop" onClick={() => store.dispatch(pressCrate())}></div>
-					<div className="crateBottom" onClick={() => store.dispatch(defaultCrate())}></div>
+					<div className={crateTop} onMouseDown={() => store.dispatch(pressCrate())} onMouseUp={() => store.dispatch(defaultCrate())}></div>
+					<div className={crateBottom}></div>
 					<div className="crateShadow"></div>
 				</div>
 			</div>
