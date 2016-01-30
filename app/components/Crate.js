@@ -39,7 +39,12 @@ class Crate extends React.Component {
 			// <div className="crateHolder" is="crateHolder" onMouseDown={() => this.crateDownAction()} onTouchStart={() => this.crateDownAction()} onTouchEnd={() => this.crateUpAction()} onMouseUp={() => this.crateUpAction()}>
 			<div className="crateComponent">
 				<div className="crateHolder">
-					<div className={crateTop} onMouseDown={() => store.dispatch(pressCrate())} onMouseUp={() => store.dispatch(defaultCrate())}></div>
+					<div className={crateTop} 
+						onMouseDown={() => store.dispatch(pressCrate())} 
+						onMouseUp={() => store.dispatch(defaultCrate())}
+						onTouchStart={() => store.dispatch(pressCrate())}
+						onTouchEnd={() => store.dispatch(defaultCrate())} 
+						/>
 					<div className={crateBottom}></div>
 					<div className="crateShadow"></div>
 				</div>
