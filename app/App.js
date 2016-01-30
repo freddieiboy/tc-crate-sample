@@ -28,7 +28,7 @@ class App extends Component {
 						<h4 className="title" onClick={() => store.dispatch(newTitle())}>{state.title}</h4>
 						<Crate crateState={crateState} />
 						<div className="button-bar">
-							<a className="button">Test</a>
+							<a className="button">Reset</a>
 							<a className="button">Test2</a>
 						</div>
 					</div> 
