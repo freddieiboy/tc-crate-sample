@@ -2,7 +2,8 @@
   "name": "tinycrate",
   "version": "1.0.0",
   "engines": {
-    "node": "4.1.1"
+    "node": "4.1.1",
+    "npm": "3.5.2"
   },
   "description": "gifts every second",
   "main": "index.js",
@@ -41,11 +42,13 @@
     "reactcss": "0.4.2",
     "redux": "^3.0.5",
     "rimraf": "2.5.0",
+    "style-loader": "0.13.0",
+    "sass-loader": "3.1.2",
+    "css-loader": "0.23.1",
     "webpack": "1.12.10"
   },
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "6.3.13",
-    "css-loader": "0.23.1",
     "expect": "1.13.4",
     "mocha": "2.3.4",
     "react-addons-test-utils": "0.14.6",
@@ -54,9 +57,7 @@
     "redux-devtools": "3.0.1",
     "redux-devtools-dock-monitor": "1.0.1",
     "redux-devtools-log-monitor": "1.0.2",
-    "sass-loader": "3.1.2",
     "stats-webpack-plugin": "0.3.0",
-    "style-loader": "0.13.0",
     "webpack-dev-middleware": "1.4.0",
     "webpack-hot-middleware": "2.6.0"
   }
