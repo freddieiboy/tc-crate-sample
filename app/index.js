@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { createStore, compose } from 'redux';
 import { Provider } from 'react-redux'
 import { crateState } from './state/reducers';
-import './stylesheets/global.scss';
+// import './stylesheets/global.scss';
 import App from './App';
 
 const store = createStore(crateState, compose(
