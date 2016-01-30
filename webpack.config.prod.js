@@ -33,7 +33,7 @@ module.exports = {
       inject: 'body',
       filename: 'index.html'
     }),
-    new ExtractTextPlugin('[name]-[hash].min.css'),
+    new ExtractTextPlugin('styles.min.css'),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
         warnings: false,
