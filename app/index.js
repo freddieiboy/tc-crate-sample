@@ -4,6 +4,7 @@ import { createStore, compose } from 'redux';
 import { Provider } from 'react-redux'
 import { crateState } from './state/reducers';
 import css from '!style!css!sass!./stylesheets/global.scss';
+import '!style!css!sass!milligram/dist/milligram.css';
 import App from './App';
 
 const store = createStore(crateState, compose(

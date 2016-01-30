@@ -5,7 +5,7 @@ import { crateState } from '../state/reducers';
 import { pressCrate, defaultCrate } from '../state/CrateActions';
 import classNames from 'classnames';
 
-class Crate extends React.Component {
+class Crate extends Component {
 	componentDidMount() {
 		const { store } = this.context;
 		this.unsubscribe = store.subscribe(() =>
@@ -35,6 +35,11 @@ class Crate extends React.Component {
 			'crateBottomPressed': state.pressed
 		});
 
+		const crateShadow = classNames({
+			'crateShadow': !state.pressed,
+			'crateShadowPressed': state.pressed
+		});
+
 		return (
 			// <div className="crateHolder" is="crateHolder" onMouseDown={() => this.crateDownAction()} onTouchStart={() => this.crateDownAction()} onTouchEnd={() => this.crateUpAction()} onMouseUp={() => this.crateUpAction()}>
 			<div className="crateComponent">
@@ -46,7 +51,7 @@ class Crate extends React.Component {
 						onTouchEnd={() => store.dispatch(defaultCrate())} 
 						/>
 					<div className={crateBottom}></div>
-					<div className="crateShadow"></div>
+					<div className={crateShadow}></div>
 				</div>
 			</div>
 		)

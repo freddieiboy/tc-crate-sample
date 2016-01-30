@@ -1,12 +1,11 @@
 import React, { Component, PropTypes } from 'react';
-import ReactCSS from 'reactcss';
 import Crate from './components/Crate';
 import { crateState } from './state/reducers';
 import { newTitle } from './state/CrateActions';
 import { Provider, connect } from 'react-redux';
 
 
-class App extends ReactCSS.Component {
+class App extends Component {
 	componentDidMount() {
 		const { store } = this.context;
 		this.unsubscribe = store.subscribe(() =>
@@ -24,24 +23,19 @@ class App extends ReactCSS.Component {
 		return (
 			<div className="container">
 				<div className="row">
-					<div className="canvas" is="canvas">
-						<Crate crateState={crateState} />
+					{/* <div className="column" /> */}
+					<div className="canvas column">
 						<h4 className="title" onClick={() => store.dispatch(newTitle())}>{state.title}</h4>
+						<Crate crateState={crateState} />
+						<div className="button-bar">
+							<a className="button">Test</a>
+							<a className="button">Test2</a>
+						</div>
 					</div> 
+					{/* <div className="column" /> */}
 				</div>
 			</div>
 		)
-	}
-	classes() {
-		return {
-			'default': {
-				canvas: {
-					height: '100vh',
-					width: '100%',
-					backgroundColor: '#46535E'
-				}
-			}
-		}
 	}
 }
 
