@@ -1,8 +1,7 @@
-'use strict';
-
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 
@@ -24,6 +23,9 @@ module.exports = {
       inject: 'body',
       filename: 'index.html'
     }),
+    new ExtractTextPlugin('[name].css', {
+      allChunks: true
+    }),
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
@@ -40,7 +42,7 @@ module.exports = {
       loader: 'file-loader'
     }, {
     	test: /\.scss$/,
-    	loaders: ['style', 'css', 'sass']
+    	loader: ExtractTextPlugin.extract('style', 'css', 'sass')
     }]
 	}
 }

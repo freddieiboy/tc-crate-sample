@@ -19,7 +19,9 @@ module.exports = {
       inject: 'body',
       filename: 'index.html'
     }),
-    new ExtractTextPlugin('[name]-[hash].min.css'),
+    new ExtractTextPlugin('[name]-[hash].min.css', {
+      allChunks: true
+    }),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
         warnings: false,
@@ -41,7 +43,6 @@ module.exports = {
       loader: 'file-loader'
     }, {
     	test: /\.scss$/,
-      include: path.join(__dirname, 'app/stylesheets'),
     	loader: ExtractTextPlugin.extract('style', 'css', 'sass')
     }]
 	}
