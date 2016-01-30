@@ -3,7 +3,6 @@ import ReactCSS from 'reactcss';
 import * as box from './crateInfo';
 import { crateState } from '../state/reducers';
 import { pressCrate, defaultCrate } from '../state/CrateActions';
-import css from '../stylesheets/global.scss';
 import classNames from 'classnames';
 
 class Crate extends React.Component {
