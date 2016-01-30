@@ -12,21 +12,7 @@ module.exports = {
 		path: path.join(__dirname, '/dist'),
 		filename: '[name]-[hash].min.js',
 	},
-  module: {
-		loaders: [
-			{
-				test: /\.jsx?$/,
-				exclude: /(node_modules|bower_components)/,
-				loaders: ['babel', 'react-map-styles']
-			}, {
-      test: /\.svg$/,
-      loader: 'file-loader'
-    }, {
-    	test: /\.scss$/,
-    	loader: ExtractTextPlugin.extract('style', 'css', 'sass')
-    }]
-	},
-  plugins: [
+   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new HtmlWebpackPlugin({
       template: './app/index.tpl.html',
@@ -44,4 +30,19 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify('production')
     })
   ]
+  module: {
+		loaders: [
+			{
+				test: /\.jsx?$/,
+				exclude: /(node_modules|bower_components)/,
+				loaders: ['babel', 'react-map-styles']
+			}, {
+      test: /\.svg$/,
+      loader: 'file-loader'
+    }, {
+    	test: /\.scss$/,
+    	loader: ExtractTextPlugin.extract('style', 'css', 'sass'),
+      include: path.join(__dirname, 'app/stylesheets')
+    }]
+	}
 }
