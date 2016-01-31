@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Crate from './components/Crate';
 import { crateState } from './state/reducers';
-import { newTitle } from './state/CrateActions';
+import { newTitle, defaultCrate } from './state/CrateActions';
 import { Provider, connect } from 'react-redux';
 
 
@@ -28,7 +28,11 @@ class App extends Component {
 						<h4 className="title" onClick={() => store.dispatch(newTitle())}>{state.title}</h4>
 						<Crate crateState={crateState} />
 						<div className="button-bar">
-							<a className="button">Reset</a>
+							<a className="button" 
+								onClick={() => store.dispatch(defaultCrate())}
+								onTouchStart={() => store.dispatch(defaultCrate())}>
+							Reset	 
+							</a>
 							<a className="button">Test2</a>
 						</div>
 					</div> 

@@ -46,9 +46,7 @@ class Crate extends Component {
 				<div className="crateHolder">
 					<div className={crateTop} 
 						onMouseDown={() => store.dispatch(pressCrate())} 
-						onMouseUp={() => store.dispatch(defaultCrate())}
 						onTouchStart={() => store.dispatch(pressCrate())}
-						onTouchEnd={() => store.dispatch(defaultCrate())} 
 						/>
 					<div className={crateBottom}></div>
 					<div className={crateShadow}></div>
