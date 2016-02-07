@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ReactCSS from 'reactcss';
 import * as box from './crateInfo';
-import { crateState } from '../state/reducers';
 import { pressCrate, defaultCrate } from '../state/CrateActions';
 import classNames from 'classnames';
 

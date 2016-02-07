@@ -8,17 +8,7 @@ const initialState = {
 	title: 'Default Title'
 }
 
-// const initialState = {
-// 	crate: [1],
-// 	crateById: {
-// 		1: {
-// 			pressed: false,
-// 			opened: false
-// 		}
-// 	}
-// }
-
-const crateState = (state = initialState, action) => {
+export const crateState = (state = initialState, action) => {
 	switch (action.type) {
 		case 'PRESS_CRATE':
 			// const newId = state.crate[state.crate.length-1] + 1;
@@ -40,35 +30,40 @@ const crateState = (state = initialState, action) => {
 	}
 }
 
+
+// const initialState = {
+// 	crate: [1],
+// 	crateById: {
+// 		1: {
+// 			pressed: false,
+// 			opened: false
+// 		}
+// 	}
+// }
+
 // TEST these
 
-const testPressed = () => {
-	const stateBefore = initialState;
-	const action = {
-		type: 'PRESS_CRATE',
-		pressed: true,
-		opened: false
-	}
-	const stateAfter = [
-		{
-			pressed: true,
-			opened: false
-		}
-	];
+// const testPressed = () => {
+// 	const stateBefore = initialState;
+// 	const action = {
+// 		type: 'PRESS_CRATE',
+// 		pressed: true,
+// 		opened: false
+// 	}
+// 	const stateAfter = [
+// 		{
+// 			pressed: true,
+// 			opened: false
+// 		}
+// 	];
 
-	deepFreeze(stateBefore);
-	deepFreeze(action);
+// 	deepFreeze(stateBefore);
+// 	deepFreeze(action);
 
-	expect(
-		crateState(stateBefore, action)
-	).toEqual(stateAfter);
-};
+// 	expect(
+// 		crateState(stateBefore, action)
+// 	).toEqual(stateAfter);
+// };
 
-// testPressed();
-console.log('All tests passed.');
-
-
-export {
-	initialState,
-	crateState
-}
+// // testPressed();
+// console.log('All tests passed.');

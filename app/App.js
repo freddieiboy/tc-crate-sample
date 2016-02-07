@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Crate from './components/Crate';
-import { crateState } from './state/reducers';
 import { newTitle, defaultCrate } from './state/CrateActions';
-import { Provider, connect } from 'react-redux';
+import { connect } from 'react-redux';
 
 
 class App extends Component {
@@ -26,7 +25,7 @@ class App extends Component {
 					{/* <div className="column" /> */}
 					<div className="canvas column">
 						<h4 className="title" onClick={() => store.dispatch(newTitle())}>{state.title}</h4>
-						<Crate crateState={crateState} />
+						<Crate crateState={state} />
 						<div className="button-bar">
 							<a className="button" 
 								onClick={() => store.dispatch(defaultCrate())}
@@ -45,7 +44,7 @@ class App extends Component {
 
 function mapStateToProps(state) {
 	return {
-		crateState: state.crateState
+		crateState: state
 	}
 }
 
