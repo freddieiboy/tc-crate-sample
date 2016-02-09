@@ -41,7 +41,7 @@ export function recievePrize(json) {
 export function fetchGifs() {
   return function (dispatch) {
 		dispatch(requestPrize())
-		return fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=american+psycho')
+		return fetch('https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=american+psycho')
 			.then(response => response.json())
 			.then(json => dispatch(recievePrize(json)))
 	}
