@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import ReactCSS from 'reactcss';
 import * as box from './crateInfo';
-import { pressCrate, defaultCrate } from '../state/CrateActions';
+import { pressCrate, defaultCrate } from '../state/Actions';
 import classNames from 'classnames';
 
 class Crate extends Component {

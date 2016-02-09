@@ -1,11 +1,12 @@
 import { createStore } from 'redux';
-import deepFreeze from 'deep-freeze';
-import expect from 'expect';
 
 const initialState = {
 	pressed: false,
 	opened: false,
-	title: 'Default Title'
+	title: 'Default Title',
+	ifFetching: false,
+	prize: [],
+	lastUpdated: ''
 }
 
 export const crateState = (state = initialState, action) => {
@@ -25,45 +26,17 @@ export const crateState = (state = initialState, action) => {
 			return Object.assign({}, state, {
 				title: 'New Title!'
 			})
+		case 'REQUEST_PRIZE':
+			return Object.assign({}, state, {
+				isFetching: true
+			})
+		case 'RECEIVE_PRIZE':
+			return Object.assign({}, state, {
+				isFetching: false,
+				prize: action.prizes,
+				lastUpdated: action.receivedAt
+			})
 		default:
 			return state;
 	}
 }
-
-
-// const initialState = {
-// 	crate: [1],
-// 	crateById: {
-// 		1: {
-// 			pressed: false,
-// 			opened: false
-// 		}
-// 	}
-// }
-
-// TEST these
-
-// const testPressed = () => {
-// 	const stateBefore = initialState;
-// 	const action = {
-// 		type: 'PRESS_CRATE',
-// 		pressed: true,
-// 		opened: false
-// 	}
-// 	const stateAfter = [
-// 		{
-// 			pressed: true,
-// 			opened: false
-// 		}
-// 	];
-
-// 	deepFreeze(stateBefore);
-// 	deepFreeze(action);
-
-// 	expect(
-// 		crateState(stateBefore, action)
-// 	).toEqual(stateAfter);
-// };
-
-// // testPressed();
-// console.log('All tests passed.');

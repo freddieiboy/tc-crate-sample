@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Crate from './components/Crate';
-import { newTitle, defaultCrate } from './state/CrateActions';
+import { newTitle, defaultCrate, fetchSample } from './state/Actions';
 import { connect } from 'react-redux';
 
 
@@ -32,7 +32,7 @@ class App extends Component {
 								onTouchStart={() => store.dispatch(defaultCrate())}>
 							Reset	 
 							</a>
-							<a className="button">Test2</a>
+							<a className="button" onClick={() => fetchSample()}>Test2</a>
 						</div>
 					</div> 
 					{/* <div className="column" /> */}
