@@ -36,7 +36,7 @@ class App extends Component {
 				<div className="row">
 					{/* <div className="column" /> */}
 					<div className="canvas column">
-						<h4 className="title" onClick={() => store.dispatch(newTitle())}>{state.title}</h4>
+						<h4 className="title">{state.title}</h4>
 						<Crate crateState={state} />
 						<div className="button-bar">
 							<a className="button" 
@@ -44,7 +44,7 @@ class App extends Component {
 								onTouchStart={() => store.dispatch(defaultCrate())}>
 							Reset	 
 							</a>
-							<a className="button" onClick={() => store.dispatch(fetchGifs())}>Test2</a>
+							<a className="button" onClick={() => store.dispatch(fetchGifs())}>Get Gif</a>
 						</div>
 						{rendering}
 						{prize}

@@ -3,7 +3,7 @@ import { createStore } from 'redux';
 const initialState = {
 	pressed: false,
 	opened: false,
-	title: 'Default Title',
+	title: 'Tiny Crate',
 	isFetching: false,
 	prize: [],
 	lastUpdated: ''
@@ -15,16 +15,10 @@ export const crateState = (state = initialState, action) => {
 			// const newId = state.crate[state.crate.length-1] + 1;
 			return Object.assign({}, state, {
 				pressed: true,
-				title: 'It is pressed!'
 			})
 		case 'DEFAULT_CRATE':
 			return Object.assign({}, state, {
 				pressed: false,
-				title: 'It is NOT pressed!'
-			})
-		case 'NEW_TITLE':
-			return Object.assign({}, state, {
-				title: 'New Title!'
 			})
 		case 'REQUEST_PRIZE':
 			return Object.assign({}, state, {
