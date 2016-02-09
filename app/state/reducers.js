@@ -4,7 +4,7 @@ const initialState = {
 	pressed: false,
 	opened: false,
 	title: 'Default Title',
-	ifFetching: false,
+	isFetching: false,
 	prize: [],
 	lastUpdated: ''
 }

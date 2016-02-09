@@ -19,6 +19,18 @@ class App extends Component {
 		const { store } = this.context;
 		const state = store.getState();
 
+		var rendering;
+		var prize
+		if(state.isFetching === true) {
+			rendering = <img src="http://www.ajaxload.info/images/exemples/20.gif" alt="" className="spinner"/>
+			prize = '' 
+		} else {
+			rendering = ''
+			prize = <img src={state.prize} className="crate-prize"/>
+		}
+		
+		console.log(state.isFetching)
+
 		return (
 			<div className="container">
 				<div className="row">
@@ -34,7 +46,8 @@ class App extends Component {
 							</a>
 							<a className="button" onClick={() => store.dispatch(fetchGifs())}>Test2</a>
 						</div>
-						<img src={state.prize} className="crate-prize"/>
+						{rendering}
+						{prize}
 					</div> 
 					{/* <div className="column" /> */}
 				</div>
