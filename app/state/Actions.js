@@ -30,11 +30,20 @@ export function requestPrize() {
 	}
 }
 
-export function recievePrize() {
+export function recievePrize(json) {
 	return {
 		type: RECEIVE_PRIZE,
-	  prizes: json.data.children.map(child => child.data),
+	  prizes: json.data.image_url,
     receivedAt: Date.now()
+	}
+}
+
+export function fetchGifs() {
+  return function (dispatch) {
+		dispatch(requestPrize())
+		return fetch('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=american+psycho')
+			.then(response => response.json())
+			.then(json => dispatch(recievePrize(json)))
 	}
 }
 

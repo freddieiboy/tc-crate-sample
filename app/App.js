@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Crate from './components/Crate';
-import { newTitle, defaultCrate, fetchSample } from './state/Actions';
+import { newTitle, defaultCrate, fetchSample, requestPrize, fetchGifs } from './state/Actions';
 import { connect } from 'react-redux';
 
 
@@ -32,8 +32,9 @@ class App extends Component {
 								onTouchStart={() => store.dispatch(defaultCrate())}>
 							Reset	 
 							</a>
-							<a className="button" onClick={() => fetchSample()}>Test2</a>
+							<a className="button" onClick={() => store.dispatch(fetchGifs())}>Test2</a>
 						</div>
+						<img src={state.prize} className="crate-prize"/>
 					</div> 
 					{/* <div className="column" /> */}
 				</div>
