@@ -19,6 +19,7 @@ export const crateState = (state = initialState, action) => {
 		case 'DEFAULT_CRATE':
 			return Object.assign({}, state, {
 				pressed: false,
+				opened: false
 			})
 		case 'REQUEST_PRIZE':
 			return Object.assign({}, state, {

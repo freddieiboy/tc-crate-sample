@@ -45,9 +45,7 @@ class App extends Component {
 							Reset
 							</a>
 							<a className="button" onClick={() => store.dispatch(fetchGifs())}>Get Gif</a>
-							<button className="button #icobutton" onClick={() => this.animate()}>
-								<span className="#icobutton-label">Try Pop</span>
-							</button>
+						
 						</div>
 						{rendering}
 						{prize}
