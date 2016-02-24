@@ -24,6 +24,11 @@ export const crateState = (state = initialState, action) => {
 			return Object.assign({}, state, {
 				isFetching: true
 			})
+		case 'POP_CRATE':
+			return Object.assign({}, state, {
+				opened: true,
+				pressed: false
+			})
 		case 'RECEIVE_PRIZE':
 			return Object.assign({}, state, {
 				isFetching: false,

@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Crate from './components/Crate';
 import { newTitle, defaultCrate, fetchSample, requestPrize, fetchGifs } from './state/Actions';
 import { connect } from 'react-redux';
+import mojs, { scaleCurve } from 'mo-js';
 
 
 class App extends Component {
@@ -23,13 +24,12 @@ class App extends Component {
 		var prize
 		if(state.isFetching === true) {
 			rendering = <img src="http://www.ajaxload.info/images/exemples/20.gif" alt="" className="spinner"/>
-			prize = '' 
+			prize = ''
 		} else {
 			rendering = ''
 			prize = <img src={state.prize} className="crate-prize"/>
 		}
-		
-		console.log(state.isFetching)
+
 
 		return (
 			<div className="container">
@@ -39,16 +39,19 @@ class App extends Component {
 						<h4 className="title">{state.title}</h4>
 						<Crate crateState={state} />
 						<div className="button-bar">
-							<a className="button" 
+							<a className="button"
 								onClick={() => store.dispatch(defaultCrate())}
 								onTouchStart={() => store.dispatch(defaultCrate())}>
-							Reset	 
+							Reset
 							</a>
 							<a className="button" onClick={() => store.dispatch(fetchGifs())}>Get Gif</a>
+							<button className="button #icobutton" onClick={() => this.animate()}>
+								<span className="#icobutton-label">Try Pop</span>
+							</button>
 						</div>
 						{rendering}
 						{prize}
-					</div> 
+					</div>
 					{/* <div className="column" /> */}
 				</div>
 			</div>
@@ -67,4 +70,3 @@ App.contextTypes = {
 }
 
 export default connect(mapStateToProps)(App);
-

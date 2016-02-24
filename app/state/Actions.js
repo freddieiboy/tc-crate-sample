@@ -15,6 +15,13 @@ export function pressCrate() {
 	}
 }
 
+export const POP_CRATE = 'POP_CRATE';
+export function popCrate() {
+	return {
+		type: POP_CRATE
+	}
+}
+
 export const REQUEST_PRIZE = 'REQUEST_PRIZE';
 function requestPrize() {
 	return {
@@ -30,6 +37,7 @@ function receivePrize(json) {
     receivedAt: Date.now()
 	}
 }
+
 
 export function fetchGifs() {
   return function (dispatch) {

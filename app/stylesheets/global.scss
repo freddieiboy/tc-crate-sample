@@ -8,6 +8,10 @@ body {
 	background-color: #46535E;
 }
 
+.opened {
+	display: none;
+}
+
 .crate-prize {
 	padding-top: 2em;
 	max-width: 300px;
@@ -70,7 +74,7 @@ body {
 }
 
 .crateTopPressed {
-	@extend .crateTop; 
+	@extend .crateTop;
 	width: 103%;
 	top: 0;
 	left: -1%;
